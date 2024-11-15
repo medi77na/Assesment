@@ -1,4 +1,5 @@
 using Assesment.Models;
+using Assesment.Seeders;
 using Microsoft.EntityFrameworkCore;
 
 namespace Assesment.Data;
@@ -17,13 +18,16 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        RoleSeeder.Seed(modelBuilder);
+        SpecialtySeeder.Seed(modelBuilder);
+        ScheduleSeeder.Seed(modelBuilder);
+        PersonSeeder.Seed(modelBuilder);
+        PatientSeeder.Seed(modelBuilder);
+        DoctorSeeder.Seed(modelBuilder);
+        AppointmentSeeder.Seed(modelBuilder);
+        
 
-        /*Se colocan los seeders necesarios.
-        |
-        |
-        |
-        */
-        // modelBuilder.Entity<Person>()
+        //modelBuilder.Entity<Person>()
         //     .HasIndex(d => d.Email)
         //     .IsUnique();
     }

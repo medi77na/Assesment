@@ -4,6 +4,7 @@ using Assesment.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assesment.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241115155209_CreationSpecialtySeeder")]
+    partial class CreationSpecialtySeeder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,56 +75,6 @@ namespace Assesment.Migrations
                     b.HasIndex("IdSpecialty");
 
                     b.ToTable("appointments");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Comments = "Patient requested a general health check-up.",
-                            Date = new DateOnly(2024, 12, 5),
-                            IdDoctor = 1,
-                            IdPatient = 5,
-                            IdSpecialty = 1,
-                            ReasonConsultation = "Routine check-up",
-                            Status = true,
-                            Time = new TimeOnly(10, 30, 0)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Comments = "Patient reports chronic knee pain over the past month.",
-                            Date = new DateOnly(2024, 12, 6),
-                            IdDoctor = 2,
-                            IdPatient = 6,
-                            IdSpecialty = 3,
-                            ReasonConsultation = "Knee pain",
-                            Status = true,
-                            Time = new TimeOnly(15, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Comments = "Appointment cancelled by the patient.",
-                            Date = new DateOnly(2024, 12, 7),
-                            IdDoctor = 3,
-                            IdPatient = 7,
-                            IdSpecialty = 2,
-                            ReasonConsultation = "Skin rash",
-                            Status = false,
-                            Time = new TimeOnly(11, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Comments = "Patient experiences discomfort while sitting for long hours.",
-                            Date = new DateOnly(2024, 12, 8),
-                            IdDoctor = 4,
-                            IdPatient = 8,
-                            IdSpecialty = 4,
-                            ReasonConsultation = "Back pain",
-                            Status = true,
-                            Time = new TimeOnly(9, 0, 0)
-                        });
                 });
 
             modelBuilder.Entity("Assesment.Models.Doctor", b =>
@@ -148,32 +101,6 @@ namespace Assesment.Migrations
                     b.HasIndex("IdShedule");
 
                     b.ToTable("doctors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            IdPerson = 1,
-                            IdShedule = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            IdPerson = 2,
-                            IdShedule = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            IdPerson = 3,
-                            IdShedule = 3
-                        },
-                        new
-                        {
-                            Id = 4,
-                            IdPerson = 4,
-                            IdShedule = 4
-                        });
                 });
 
             modelBuilder.Entity("Assesment.Models.Patient", b =>
@@ -206,40 +133,6 @@ namespace Assesment.Migrations
                     b.HasIndex("IdPerson");
 
                     b.ToTable("patients");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Allergies = "Pollen",
-                            Height = 1.75,
-                            IdPerson = 5,
-                            Weight = 70.5
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Allergies = "None",
-                            Height = 1.8,
-                            IdPerson = 6,
-                            Weight = 82.299999999999997
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Allergies = "Peanuts",
-                            Height = 1.6799999999999999,
-                            IdPerson = 7,
-                            Weight = 65.0
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Allergies = "Dust",
-                            Height = 1.8500000000000001,
-                            IdPerson = 8,
-                            Weight = 90.700000000000003
-                        });
                 });
 
             modelBuilder.Entity("Assesment.Models.Person", b =>
@@ -288,128 +181,6 @@ namespace Assesment.Migrations
                     b.HasIndex("IdRole");
 
                     b.ToTable("persons");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DateBirth = new DateOnly(1990, 5, 20),
-                            DocumentNumber = 12345678,
-                            Email = "john.doe@example.com",
-                            IdRole = 2,
-                            LastName = "Doe",
-                            Name = "John",
-                            Password = "hashedpassword1",
-                            PhoneNumber = 987654321
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DateBirth = new DateOnly(1985, 11, 15),
-                            DocumentNumber = 87654321,
-                            Email = "jane.smith@example.com",
-                            IdRole = 2,
-                            LastName = "Smith",
-                            Name = "Jane",
-                            Password = "hashedpassword2",
-                            PhoneNumber = 912345678
-                        },
-                        new
-                        {
-                            Id = 3,
-                            DateBirth = new DateOnly(1995, 7, 10),
-                            DocumentNumber = 12312312,
-                            Email = "alice.johnson@example.com",
-                            IdRole = 2,
-                            LastName = "Johnson",
-                            Name = "Alice",
-                            Password = "hashedpassword3",
-                            PhoneNumber = 998877665
-                        },
-                        new
-                        {
-                            Id = 4,
-                            DateBirth = new DateOnly(1988, 3, 25),
-                            DocumentNumber = 45645645,
-                            Email = "bob.brown@example.com",
-                            IdRole = 2,
-                            LastName = "Brown",
-                            Name = "Bob",
-                            Password = "hashedpassword4",
-                            PhoneNumber = 987123456
-                        },
-                        new
-                        {
-                            Id = 5,
-                            DateBirth = new DateOnly(1992, 9, 5),
-                            DocumentNumber = 78978978,
-                            Email = "charlie.davis@example.com",
-                            IdRole = 3,
-                            LastName = "Davis",
-                            Name = "Charlie",
-                            Password = "hashedpassword5",
-                            PhoneNumber = 976543210
-                        },
-                        new
-                        {
-                            Id = 6,
-                            DateBirth = new DateOnly(1993, 2, 18),
-                            DocumentNumber = 65432123,
-                            Email = "emily.wilson@example.com",
-                            IdRole = 3,
-                            LastName = "Wilson",
-                            Name = "Emily",
-                            Password = "hashedpassword6",
-                            PhoneNumber = 965874123
-                        },
-                        new
-                        {
-                            Id = 7,
-                            DateBirth = new DateOnly(1987, 4, 12),
-                            DocumentNumber = 11223344,
-                            Email = "daniel.taylor@example.com",
-                            IdRole = 3,
-                            LastName = "Taylor",
-                            Name = "Daniel",
-                            Password = "hashedpassword7",
-                            PhoneNumber = 914578965
-                        },
-                        new
-                        {
-                            Id = 8,
-                            DateBirth = new DateOnly(1999, 8, 21),
-                            DocumentNumber = 55667788,
-                            Email = "sophia.anderson@example.com",
-                            IdRole = 3,
-                            LastName = "Anderson",
-                            Name = "Sophia",
-                            Password = "hashedpassword8",
-                            PhoneNumber = 987412365
-                        },
-                        new
-                        {
-                            Id = 9,
-                            DateBirth = new DateOnly(1991, 10, 3),
-                            DocumentNumber = 99887766,
-                            Email = "michael.thomas@example.com",
-                            IdRole = 1,
-                            LastName = "Thomas",
-                            Name = "Michael",
-                            Password = "hashedpassword9",
-                            PhoneNumber = 923456789
-                        },
-                        new
-                        {
-                            Id = 10,
-                            DateBirth = new DateOnly(1996, 12, 29),
-                            DocumentNumber = 44332211,
-                            Email = "olivia.harris@example.com",
-                            IdRole = 1,
-                            LastName = "Harris",
-                            Name = "Olivia",
-                            Password = "hashedpassword10",
-                            PhoneNumber = 965432198
-                        });
                 });
 
             modelBuilder.Entity("Assesment.Models.Role", b =>
@@ -475,56 +246,6 @@ namespace Assesment.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("shedules");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            EndDate = new DateOnly(2024, 11, 30),
-                            EndTime = new TimeOnly(14, 0, 0),
-                            StartDate = new DateOnly(2024, 11, 20),
-                            StartTime = new TimeOnly(8, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            EndDate = new DateOnly(2024, 12, 5),
-                            EndTime = new TimeOnly(20, 0, 0),
-                            StartDate = new DateOnly(2024, 11, 20),
-                            StartTime = new TimeOnly(14, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            EndDate = new DateOnly(2024, 11, 28),
-                            EndTime = new TimeOnly(17, 0, 0),
-                            StartDate = new DateOnly(2024, 11, 22),
-                            StartTime = new TimeOnly(9, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            EndDate = new DateOnly(2024, 12, 1),
-                            EndTime = new TimeOnly(16, 0, 0),
-                            StartDate = new DateOnly(2024, 11, 25),
-                            StartTime = new TimeOnly(10, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            EndDate = new DateOnly(2024, 12, 10),
-                            EndTime = new TimeOnly(13, 0, 0),
-                            StartDate = new DateOnly(2024, 11, 27),
-                            StartTime = new TimeOnly(7, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 6,
-                            EndDate = new DateOnly(2024, 12, 15),
-                            EndTime = new TimeOnly(18, 0, 0),
-                            StartDate = new DateOnly(2024, 12, 1),
-                            StartTime = new TimeOnly(12, 0, 0)
-                        });
                 });
 
             modelBuilder.Entity("Assesment.Models.Specialty", b =>

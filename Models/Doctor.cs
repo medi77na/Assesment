@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Assesment.Models;
 
 [Table("doctors")]
-public class Doctor : Person
+public class Doctor
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
