@@ -6,14 +6,13 @@ namespace Assesment.Data;
 
 public class AppDbContext(DbContextOptions options) : DbContext(options)
 {
-    public DbSet<Appointment> Appointments { get; set; }
+    public DbSet<Role> Roles { get; set; }
+    public DbSet<Specialty> Specialties { get; set; }
+    public DbSet<Schedule> Schedules { get; set; }
+    public DbSet<Person> Persons { get; set; }
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Patient> Patients { get; set; }
-    public DbSet<Role> Roles { get; set; }
-    public DbSet<Schedule> Schedules { get; set; }
-    public DbSet<User> Users { get; set; }
-    public DbSet<Specialty> Specialties { get; set; }
-
+    public DbSet<Appointment> Appointments { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

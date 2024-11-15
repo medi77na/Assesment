@@ -19,4 +19,10 @@ public class Patient : Person
 
     [Column("allergies")]
     public string? Allergies { get; set; }
+
+    [Column("id_person")]
+    public int IdPerson { get; set; }
+
+    [ForeignKey(nameof(IdPerson))]
+    public Person Person { get; set; }
 }

@@ -16,4 +16,10 @@ public class Doctor : Person
 
     [ForeignKey(nameof(IdShedule))]
     public Schedule? Schedule { get; set; }
+
+    [Column("id_person")]
+    public int IdPerson { get; set; }
+
+    [ForeignKey(nameof(IdPerson))]
+    public Person Person { get; set; }
 }
