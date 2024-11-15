@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Assesment.Models;
 
-namespace Assesment.Repositories
+namespace Assesment.Repositories;
+
+public interface IDoctorRepository
 {
-    public interface IDoctorRepository
-    {
-        
-    }
+    Task Create (Doctor model);
+    Task<Doctor> GetById(int id);
 }

@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Assesment.Models;
 
-namespace Assesment.Repositories
+namespace Assesment.Repositories;
+
+public interface ISpecialtyRepository
 {
-    public interface ISpecialtyRepository
-    {
-        
-    }
+    Task<List<Specialty>> GetAll();
 }

@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Assesment.Models;
 
-namespace Assesment.Repositories
+namespace Assesment.Repositories;
+
+public interface IAppointmentRepository
 {
-    public interface IAppointmentRepository
-    {
-        
-    }
+    Task<List<Appointment>> GetAll();
+    Task<Appointment> GetById(int id);
+    Task Create(Appointment appointment);
+    Task<List<Appointment>> GetByIdDoctor(int id);
+    Task<List<Appointment>> GetByIdPatient(int id);
 }
