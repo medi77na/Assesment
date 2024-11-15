@@ -1,5 +1,4 @@
 using Assesment.Data;
-using HotelManagementAndReservation.Data;
 
 namespace HotelManagementAndReservation.Services;
 public class GeneralService

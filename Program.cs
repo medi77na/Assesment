@@ -1,5 +1,7 @@
 using System.Text;
 using Assesment.Data;
+using Assesment.Repositories;
+using Assesment.Services;
 using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
@@ -75,7 +77,11 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Space to place dependency injection for interfaces.
 // ----------------------------------------------------
-// builder.Services.AddScoped<IRoleRepository, RoleService>()
+builder.Services.AddScoped<IAppointmentRepository, AppointmentService>();
+builder.Services.AddScoped<IDoctorRepository, DoctorService>();
+builder.Services.AddScoped<IPatientRepository, PatientService>();
+builder.Services.AddScoped<IPersonRepository, PersonService>();
+builder.Services.AddScoped<ISpecialtyRepository, SpecialityService>();
 
 
 // ----------------------------------------------------
