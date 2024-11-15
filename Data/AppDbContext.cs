@@ -19,12 +19,12 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
     {
         base.OnModelCreating(modelBuilder);
         RoleSeeder.Seed(modelBuilder);
-        // SpecialtySeeder.Seed(modelBuilder);
-        // ScheduleSeeder.Seed(modelBuilder);
-        // PersonSeeder.Seed(modelBuilder);
-        // PatientSeeder.Seed(modelBuilder);
-        // DoctorSeeder.Seed(modelBuilder);
-        // AppointmentSeeder.Seed(modelBuilder);
+        SpecialtySeeder.Seed(modelBuilder);
+        ScheduleSeeder.Seed(modelBuilder);
+        PersonSeeder.Seed(modelBuilder);
+        PatientSeeder.Seed(modelBuilder);
+        DoctorSeeder.Seed(modelBuilder);
+        AppointmentSeeder.Seed(modelBuilder);
         
 
         //modelBuilder.Entity<Person>()

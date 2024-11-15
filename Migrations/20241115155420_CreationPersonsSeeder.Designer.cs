@@ -4,6 +4,7 @@ using Assesment.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assesment.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241115155420_CreationPersonsSeeder")]
+    partial class CreationPersonsSeeder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,56 +75,6 @@ namespace Assesment.Migrations
                     b.HasIndex("IdSpecialty");
 
                     b.ToTable("appointments");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Comments = "Patient requested a general health check-up.",
-                            Date = new DateOnly(2024, 12, 5),
-                            IdDoctor = 1,
-                            IdPatient = 5,
-                            IdSpecialty = 1,
-                            ReasonConsultation = "Routine check-up",
-                            Status = true,
-                            Time = new TimeOnly(10, 30, 0)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Comments = "Patient reports chronic knee pain over the past month.",
-                            Date = new DateOnly(2024, 12, 6),
-                            IdDoctor = 2,
-                            IdPatient = 6,
-                            IdSpecialty = 3,
-                            ReasonConsultation = "Knee pain",
-                            Status = true,
-                            Time = new TimeOnly(15, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Comments = "Appointment cancelled by the patient.",
-                            Date = new DateOnly(2024, 12, 7),
-                            IdDoctor = 3,
-                            IdPatient = 7,
-                            IdSpecialty = 2,
-                            ReasonConsultation = "Skin rash",
-                            Status = false,
-                            Time = new TimeOnly(11, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Comments = "Patient experiences discomfort while sitting for long hours.",
-                            Date = new DateOnly(2024, 12, 8),
-                            IdDoctor = 4,
-                            IdPatient = 8,
-                            IdSpecialty = 4,
-                            ReasonConsultation = "Back pain",
-                            Status = true,
-                            Time = new TimeOnly(9, 0, 0)
-                        });
                 });
 
             modelBuilder.Entity("Assesment.Models.Doctor", b =>
