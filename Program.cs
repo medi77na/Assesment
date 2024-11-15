@@ -139,24 +139,7 @@ app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    SeedDatabase(context); // Llama al método para agregar datos de prueba
-}
 
 app.MapControllers();
 
 app.Run();
-
-void SeedDatabase(AppDbContext context)
-{
-    var incomeSeeder = new IncomeSeeder();
-
-    if (!context.Incomes.Any())
-    {
-        var fakeIncomes = incomeSeeder.GenerateIncomes(50); // Genera 50 ingresos falsos
-        context.Incomes.AddRange(fakeIncomes);
-        context.SaveChanges();
-    }
-}

@@ -3,17 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assesment.Models;
 
-[Table("doctors")]
-public class Doctor : Person
+public class User : Person
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
     public int Id { get; set; }
-
-    [Column("id_shedule")]
-    public int IdShedule { get; set; }
-
-    [ForeignKey(nameof(IdShedule))]
-    public Schedule? Schedule { get; set; }
 }

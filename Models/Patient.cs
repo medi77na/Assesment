@@ -19,10 +19,4 @@ public class Patient : Person
 
     [Column("allergies")]
     public string? Allergies { get; set; }
-
-    [Column("id_role")]
-    public int IdRole { get; set; } = 2;
-
-    [ForeignKey(nameof(IdRole))]
-    public Role? Role { get; set; }
 }

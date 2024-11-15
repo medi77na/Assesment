@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assesment.Models;
 
+[NotMapped]
 public class Person
 {
     [Column("name")]
@@ -24,4 +25,10 @@ public class Person
 
     [Column("password")]
     public string? Password { get; set; }
+
+    [Column("id_role")]
+    public int IdRole { get; set; } = 2;
+
+    [ForeignKey(nameof(IdRole))]
+    public Role? Role { get; set; }
 }

@@ -1,3 +1,4 @@
+/*
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -35,13 +36,14 @@ public static class Utilities
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    public static string GeneratePasswordHasheo(User model)
-    {
-        // Create PasswordHasher<User> instance
-        var passwordHasher = new PasswordHasher<User>();
+    // public static string GeneratePasswordHasheo(User model)
+    // {
+    //     // Create PasswordHasher<User> instance
+    //     var passwordHasher = new PasswordHasher<User>();
 
-        // Hash the password and assign it to the user's Password property
-        return passwordHasher.HashPassword(model, model.Password);
-    }
+    //     // Hash the password and assign it to the user's Password property
+    //     return passwordHasher.HashPassword(model, model.Password);
+    // }
 
 }
+*/
