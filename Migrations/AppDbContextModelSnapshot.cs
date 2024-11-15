@@ -71,7 +71,7 @@ namespace Assesment.Migrations
 
                     b.HasIndex("IdSpecialty");
 
-                    b.ToTable("appointments");
+                    b.ToTable("appointments", (string)null);
                 });
 
             modelBuilder.Entity("Assesment.Models.Person", b =>
@@ -119,7 +119,7 @@ namespace Assesment.Migrations
 
                     b.HasIndex("IdRole");
 
-                    b.ToTable("persons");
+                    b.ToTable("persons", (string)null);
 
                     b.UseTptMappingStrategy();
                 });
@@ -139,7 +139,7 @@ namespace Assesment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("roles");
+                    b.ToTable("roles", (string)null);
                 });
 
             modelBuilder.Entity("Assesment.Models.Schedule", b =>
@@ -169,7 +169,7 @@ namespace Assesment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("shedules");
+                    b.ToTable("shedules", (string)null);
                 });
 
             modelBuilder.Entity("Assesment.Models.Specialty", b =>
@@ -187,7 +187,7 @@ namespace Assesment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Specialties");
+                    b.ToTable("Specialties", (string)null);
                 });
 
             modelBuilder.Entity("Assesment.Models.Doctor", b =>
@@ -206,7 +206,7 @@ namespace Assesment.Migrations
 
                     b.HasIndex("IdShedule");
 
-                    b.ToTable("doctors");
+                    b.ToTable("doctors", (string)null);
                 });
 
             modelBuilder.Entity("Assesment.Models.Patient", b =>
@@ -231,7 +231,7 @@ namespace Assesment.Migrations
 
                     b.HasIndex("IdPerson");
 
-                    b.ToTable("patients");
+                    b.ToTable("patients", (string)null);
                 });
 
             modelBuilder.Entity("Assesment.Models.Appointment", b =>
